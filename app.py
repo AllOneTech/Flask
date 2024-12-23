@@ -1,8 +1,9 @@
 import os
 import redis
 from flask import Flask, request, jsonify
-
+from flask_cors import CORS
 app = Flask(__name__)
+CORS(app) 
 
 # Use Render's Redis URL from environment variables
 redis_url = os.getenv('REDIS_URL', 'redis://localhost:6379')  # Default to localhost for local dev
